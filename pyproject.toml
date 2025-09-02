@@ -1,0 +1,20 @@
+[project]
+name = "learning-openai-agents-sdk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Muhammad Asif", email = "programmerasif@hotmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "openai-agents>=0.2.10",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+learning-openai-agents-sdk = "learning_openai_agents_sdk:main"
+
+[build-system]
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
