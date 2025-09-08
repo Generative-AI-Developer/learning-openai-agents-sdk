@@ -5,7 +5,7 @@ load_dotenv()
 
 
 
-@function_tool
+@function_tool(isenabled=False) #In this case tool will not be used because isenabled is False, even if model wants to use it. 
 def get_weather(city: str) -> str:
       return f"The weather in {city} is sunny"
 
