@@ -3,9 +3,12 @@ from dotenv import load_dotenv
 from agents.agent import StopAtTools
 load_dotenv()
 
+
+
 @function_tool
 def get_weather(city: str) -> str:
       return f"The weather in {city} is sunny"
+
 @function_tool
 def get_support_details(city: str) -> str:
       return f"The support details for {city} are 123-456-7890"
