@@ -10,8 +10,7 @@ refund_agent = Agent(
     instructions="You are a helpful assistant",
     model="gpt-5-nano",
     model_settings=ModelSettings(max_tokens=400)  # Limit response length
-
-    
+ 
 )
 
 general_agent = Agent(
@@ -21,9 +20,13 @@ general_agent = Agent(
         " handoff to the Refund agent."
         "Otherwise, respond generally."
     ),
-    handoffs=[handoff(agent=refund_agent)],
+
+    handoffs=[handoff(agent=refund_agent,
+             tool_description_override="handle a refund request",
+             is_enabled=False        
+)],
     model="gpt-5-nano",
-    # model_settings=ModelSettings(max_tokens=400)  # Limit response length
+    model_settings=ModelSettings(max_tokens=400)  # Limit response length
 )
 
 async def main():
